@@ -46,7 +46,7 @@ export const login = catchAsyncError(async (req, res, next) => {
     if (!isMatch)
         return next(new ErrorHandler("Incorrect Email or Password", 401));
 
-    sendToken(res, user, `Welcome back, ${user.firstName}`, 200);
+    sendToken(res, user, `Welcome back, ${user.fullName}`, 200);
 });
 
 export const logout = catchAsyncError(async (req, res, next) => {
